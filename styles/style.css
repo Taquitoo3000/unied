@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+/* Formatos de estilos */
+
+:root {
+    --color1: white;
+    --color2: rgb(70, 8, 147);
+    --color3: rgb(70, 8, 147);
+    --color4: rgb(105, 59, 160);
+    --color5: black;
+    --color6: rgb(186, 186, 186);
+}
+*{
+    font-family: 'Sensation', sans-serif;
+}
+header {
+    padding: 0% 0% 2% 00%;
+}
+.menu {
+    border-radius: 10px;
+    padding: 0% 1%;
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    background-color: var(--color3);
+}
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background-color: var(--color3);
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    color: var(--color2);
+    cursor: pointer;
+}
+.boton_menu {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--color1);
+    padding: 1%;
+    margin: 0%;
+}
+.boton_menu:hover {
+    background-color: var(--color4);
+    color: var(--color1);
+}
+html, body {
+    height: 100%;
+    background-color: var(--color1);
+    color: var(--color5);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+.imagen_perfil {
+    width: 200px;
+    border-radius: 100%;
+}
+main {
+    flex: 1;
+}
+.titulo {
+    color: var(--color2);
+    margin: 0 0 0 0;
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: "Orbitron", sans-serif;
+}
+.subtitulo {
+    color: var(--color2);
+    margin: 1% 20%;
+    font-size: 1.2rem;
+}
+.subsubtitulo {
+    margin: 0% 0%;
+}
+.presentacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0% 20%;
+}
+
+.presentacion_miembros {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0px;
+    margin: 0% 0%;
+}
+.miembro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 500px;
+}
+
+.lista {
+    margin: 1% 0%;
+    padding: 0% 2%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.division {
+    border-top: 5px solid var(--color3);
+    margin: 0% 20%;
+}
+.linea {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0% 0% 2% 0%;
+    gap: 1rem;
+}
+.p1 {
+    flex: 1 1 400px;
+    margin: 0% 0%;
+    padding: 0% 0%;
+    text-align: center;
+}
+.enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1% 0%;
+    gap: 16px;
+}
+.boton_enlace {
+    width: 50px;
+    text-align: center;
+    padding: 13px 0;
+    border-radius: 100px;
+    color: var(--color5);
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--color2);
+}
+.boton_cv {
+    width: 200px;
+    text-align: center;
+    padding: 13px 0;
+    border: 2px solid var(--color2);
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color5);
+    margin: 0% 0% 2% 0%;
+}
+.boton_credential {
+    text-align: center;
+    padding: 0.8px 5px;
+    border: 2px solid var(--color2);
+    border-radius: 16px;
+    font-weight: 300;
+    text-decoration: none;
+    color: var(--color2);
+}
+.boton_credential:hover {
+    background-color: var(--color6);
+}
+.boton_cv:hover {
+    background-color: var(--color6);
+}
+.boton_enlace:hover {
+    background-color: var(--color6);
+}
+footer {
+    background-color: var(--color6);
+    font-size: 0.8rem;
+    display: flex;
+}
+
+@media (max-width:1200px) {
+    header {
+        padding: 0;
+    }
+    .menu {
+        display: none;
+    }
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        text-align: center;
+        justify-content: space-between;
+        gap: 0px;
+        padding: 0% 0%;
+    }
+    .boton_menu {
+        padding: 2% 0%;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .menu a {
+        display: block;
+    }
+    .presentacion {
+        margin: 10% 0%;
+    }
+    .caja {
+        margin: 5% 1%;
+    }
+    .division {
+        margin: 0% 0%;
+    }
+    .titulo {
+        font-size: 1.4rem;
+    }
+    .linea {
+        width: 100%;
+        justify-content: center;
+    }
+    .p1 {
+        text-align: center;
+        width: auto;
+        margin: 0% 0%;
+        padding: 0% 0%;
+    }
+    .subtitulo {
+        margin: 2% 0%;
+    }
+}
