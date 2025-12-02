@@ -1,0 +1,221 @@
+.menu {
+    border-radius: 10px;
+    padding: 0% 1%;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    background-color: var(--color3);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+.submenu-container {
+    display: flex;
+    align-items: center;
+}
+.boton_menu {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color1);
+    padding: 1%;
+    margin: 0%;
+    user-select: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.boton_menu.has-submenu{
+    position: relative;
+    padding: 10% 0%;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: var(--color2);
+    min-width: 11%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+    top: 100%;
+    left: 1;
+    font-size: 0.8rem;
+    font-weight: 200;
+}
+.submenu a {
+    color: var(--color1);
+    padding: 5% 10%;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.submenu a:hover {
+    background-color: var(--color4);
+    color: var(--color1);
+}
+
+/* Clase para mostrar el submenú */
+.submenu.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Indicador visual de que tiene submenú */
+.has-submenu::after {
+    content: ' ▼';
+    font-size: 0.7em;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.submenu-container.active .has-submenu::after {
+    transform: rotate(180deg);
+    color: var(--color1);
+}
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background-color: var(--color3);
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    color: var(--color2);
+    cursor: pointer;
+}
+.boton_menu:hover {
+    background-color: var(--color4);
+    color: var(--color1);
+}
+
+@media (max-width:1200px) {
+    header {
+        padding: 0;
+    }
+    .menu {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        text-align: left;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 0;
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+    }
+    
+    .menu.active {
+        display: flex;
+    }
+    
+    .boton_menu {
+        padding: 10px 0px;
+        margin: 0;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        text-align: left;
+        justify-content: flex-start;
+    }
+    .boton_menu.has-submenu{
+    position: relative;
+    padding: 2% 0%;
+}
+    .menu-toggle {
+        display: block;
+        width: auto;
+        position: absolute;
+        right: 85%;
+        top: 90%;
+        color: var(--color1);
+        background: var(--color3);
+        padding: 0% 3%;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        z-index: 1001;
+        border: none;
+    }
+    
+    .menu a {
+        display: block;
+    }
+    
+    /* Ajustar el header para el toggle */
+    header {
+        position: relative;
+        padding: 15px 0;
+    }
+    
+    .linea {
+        padding-right: 60px; /* Espacio para el botón toggle */
+    }
+    
+    /* Submenú en móvil */
+    .submenu-container {
+        width: 100%;
+        padding: 0%;
+    }
+    
+    .submenu {
+        position: static;
+        width: 100%;
+        min-width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        margin-top: 0;
+        display: none;
+    }
+    
+    .submenu.active {
+        display: flex;
+    }
+    
+    .submenu a {
+        padding: 14px 35px;
+        background: rgba(70, 8, 147, 0.9);
+    }
+    
+    .presentacion {
+        margin: 10% 5%;
+    }
+    
+    .caja {
+        margin: 5% 2%;
+    }
+    
+    .division {
+        margin: 0% 5%;
+    }
+    
+    .titulo {
+        font-size: 1.4rem;
+        margin: 0 0 15px 0;
+    }
+    
+    .linea {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 0 10px 0;
+    }
+    
+    .p1 {
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .subtitulo {
+        margin: 5% 5%;
+        text-align: center;
+    }
+}
