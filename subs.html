@@ -5,21 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subs</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/style_subs.css">
+    <link rel="stylesheet" href="styles/subs.css">
+    <link rel="stylesheet" href="styles/menu.css">
 </head>
 <body>
     <header>
         <section class="linea">
-            <img src="img/logo_horizontal.png" alt="PRODHEG" width="200px">
+            <a href="index.html" class="logo-link" onclick="scrollToTop()">
+                <img src="img/logo_horizontal.png" alt="PRODHEG" width="200px">
+            </a>
             <h1 class="titulo">
-                Unidad de Estadística
+                Unidad de Información Estadística y Documental
             </h1>
         </section>
         <button class="menu-toggle" id="menu-toggle">☰</button>
         <nav class="menu" id="menu">
-            <a href="index.html" class="boton_menu">Home</a>
-            <a href="https://taquitoo3000.pythonanywhere.com/" class="boton_menu">Estadísticas</a>
-            <a href="subs.html" class="boton_menu">SubProcuradurías</a>
+            <a href="index.html" class="boton_menu">Inicio</a>
+            <div class="submenu-container" id="estadisticasContainer">
+                <a href="estadisticas.html" class="boton_menu has-submenu" id="estadisticasBtn">Estadísticas</a>
+                <div class="submenu" id="estadisticasSubmenu">
+                    <a href="https://taquitoo3000.pythonanywhere.com/">General</a>
+                    <a href="subs.html">Subprocuradurías</a>
+                    <a href="censo_trabajo.html">Censo Trabajo</a>
+                </div>
+            </div>
             <a href="reporte.html" class="boton_menu">Reporte</a>
             <a href="miembros.html" class="boton_menu">Miembros</a>
         </nav>
@@ -229,29 +238,5 @@
     </main>
     <footer>Made by Taquito</footer>
     <script src="app.js"></script>
-    <script>
-        // Función para mostrar/ocultar zonas
-        function toggleZona(zonaId) {
-            const contenido = document.getElementById(zonaId);
-            const flecha = contenido.previousElementSibling.querySelector('.flecha');
-            
-            // Cerrar otras zonas
-            document.querySelectorAll('.zona-content').forEach(zona => {
-                if (zona.id !== zonaId && zona.classList.contains('active')) {
-                    zona.classList.remove('active');
-                    zona.previousElementSibling.querySelector('.flecha').classList.remove('abajo');
-                }
-            });
-            
-            // Toggle zona actual
-            contenido.classList.toggle('active');
-            flecha.classList.toggle('abajo');
-        }
-        
-        // Inicializar primera zona abierta por defecto
-        document.addEventListener('DOMContentLoaded', function() {
-            toggleZona('zonaA');
-        });
-    </script>
 </body>
 </html>
