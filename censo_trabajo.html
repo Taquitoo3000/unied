@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Censo</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/subs.css">
+    <link rel="stylesheet" href="styles/menu.css">
+</head>
+<body>
+    <header>
+        <section class="linea">
+            <a href="index.html" class="logo-link" onclick="scrollToTop()">
+                <img src="img/logo_horizontal.png" alt="PRODHEG" width="200px">
+            </a>
+            <h1 class="titulo">
+                Unidad de Información Estadística y Documental
+            </h1>
+        </section>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <nav class="menu" id="menu">
+            <a href="index.html" class="boton_menu">Inicio</a>
+            <div class="submenu-container" id="estadisticasContainer">
+                <a href="estadisticas.html" class="boton_menu has-submenu" id="estadisticasBtn">Estadísticas</a>
+                <div class="submenu" id="estadisticasSubmenu">
+                    <a href="https://taquitoo3000.pythonanywhere.com/">General</a>
+                    <a href="subs.html">Subprocuradurías</a>
+                    <a href="censo_trabajo.html">Censo Trabajo</a>
+                </div>
+            </div>
+            <a href="reporte.html" class="boton_menu">Reporte</a>
+            <a href="miembros.html" class="boton_menu">Miembros</a>
+        </nav>
+    </header>
+    <main>
+        <h1 class="titulo">Censo de Trabajo</h1>
+        <div class="division"></div>
+        <!-- Tiempos de Respuesta -->
+        <div class="zona-container">
+            <div class="zona-header" onclick="toggleZona('zonaA')">
+                <h2>Tiempos de Respuesta</h2>
+                <span class="flecha">▼</span>
+            </div>
+            <div class="zona-content" id="zonaA">
+                <div class="graficas-container">
+                    <div class="imagen-grafica">
+                        <h3>Tiempo promedio de Respuesta en 2025</h3>
+                        <h2>10.5 días</h2>
+                    </div>
+                    <div class="imagen-grafica">
+                        <h3>Tiempo promedio de Conclusión en 2025</h3>
+                        <h2>91 días</h2>
+                    </div>
+                </div>
+                <div class="division"></div>
+                <h3 class="titulo">No Admisiones</h3>
+                <div class="graficas-container">
+                    <div class="imagen-grafica">
+                        <h3>Tiempo promedio de Conclusión en 2025</h3>
+                        <h2>11 días</h2>
+                    </div>
+                    <div class="imagen-grafica">
+                        <img src="img/censo/distr_admis_general.png" alt="Mediana de No Admisiones"
+                             onerror="this.src='img/placeholder.png'">
+                    </div>
+                </div>
+                <div class="graficas-container">
+                    <div class="imagen-grafica">
+                        <img src="img/censo/admis_general.png" alt="Tasas de Conclusión por Año" 
+                             onerror="this.src='img/placeholder.png'">
+                    </div>
+                    <div class="imagen-grafica">
+                        <img src="img/censo/promedio_admis.png" alt="Tasas de Conclusión por Año" 
+                             onerror="this.src='img/placeholder.png'">
+                    </div>
+                </div>
+                <div class="division"></div>
+                <h3 class="titulo">Sobreseimientos</h3>
+                <div class="graficas-container">
+                    <div class="imagen-grafica">
+                        <h3>Tiempo promedio de Conclusión en 2025</h3>
+                        <h2>55 días</h2>
+                    </div>
+                    <div class="imagen-grafica">
+                        <img src="img/censo/distr_sobre_general.png" alt="Mediana de No Admisiones"
+                             onerror="this.src='img/placeholder.png'">
+                    </div>
+                </div>
+                <div class="graficas-container">
+                    <div class="imagen-grafica">
+                        <img src="img/censo/sobre_general.png" alt="Tasas de Conclusión por Año" 
+                             onerror="this.src='img/placeholder.png'">
+                    </div>
+                    <div class="imagen-grafica">
+                        <img src="img/censo/promedio_sobre.png" alt="Tasas de Conclusión por Año" 
+                             onerror="this.src='img/placeholder.png'">
+                    </div>
+                </div>
+                <div class="division"></div>
+                <h3 class="titulo">Resoluciones</h3>
+                <div class="graficas-container">
+                    <div class="imagen-grafica">
+                        <h3>Tiempo promedio de Conclusión en 2025</h3>
+                        <h2>206 días</h2>
+                    </div>
+                    <div class="imagen-grafica">
+                        <img src="img/censo/distr_rec_general.png" alt="Mediana de No Admisiones"
+                             onerror="this.src='img/placeholder.png'">
+                    </div>
+                </div>
+                <div class="graficas-container">
+                    <div class="imagen-grafica">
+                        <img src="img/censo/rec_general.png" alt="Tasas de Conclusión por Año" 
+                             onerror="this.src='img/placeholder.png'">
+                    </div>
+                    <div class="imagen-grafica">
+                        <img src="img/censo/promedio_rec.png" alt="Tasas de Conclusión por Año" 
+                             onerror="this.src='img/placeholder.png'">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Grupos Vulnerables -->
+        <div class="zona-container">
+            <div class="zona-header" onclick="toggleZona('zonaB')">
+                <h2>Grupos Vulnerables</h2>
+                <span class="flecha">▼</span>
+            </div>
+            <div class="zona-content" id="zonaB">
+                <div class="graficas-container">
+                    <div class="imagen-grafica">
+                        <h3>Expedientes identificados con grupos vulnerables en relación al total en 2025</h3>
+                        <!--1755/2654-->
+                        <h2>66.12%</h2>
+                    </div>
+                    <div class="imagen-grafica">
+                        <h3>Expedientes identificados con defensores de DDHH en relación al total en 2025</h3>
+                        <!--1310/2654-->
+                        <h2>49.36%</h2>
+                    </div>
+                </div>
+                <div class="graficas-container">
+                    <div class="imagen-grafica">
+                        <h3>Grupos Vulnerables con más Incidencias 2025</h3>
+                        <img src="img/censo/barras.png" alt="Mediana de No Admisiones"
+                             onerror="this.src='img/placeholder.png'">
+                    </div>
+                    <div class="imagen-grafica">
+                        <h3>Distribución de Grupos Vulnerables 2025</h3>
+                        <img src="img/censo/pastel.png" alt="Mediana de Sobreseimientos"
+                             onerror="this.src='img/placeholder.png'">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Resoluciones -->
+        <div class="zona-container">
+            <div class="zona-header" onclick="toggleZona('zonaD')">
+                <h2>Resoluciones</h2>
+                <span class="flecha">▼</span>
+            </div>
+            <div class="zona-content" id="zonaD">
+                <div class="graficas-container">
+                    <div class="imagen-grafica">
+                        <h3>No Admisiones</h3>
+                        <img src="img/zonaD/media_admis.png" alt="Mediana de No Admisiones"
+                             onerror="this.src='img/placeholder.png'">
+                    </div>
+                    <div class="imagen-grafica">
+                        <h3>Sobreseimientos</h3>
+                        <img src="img/zonaD/media_sobre.png" alt="Mediana de Sobreseimientos"
+                             onerror="this.src='img/placeholder.png'">
+                    </div>
+                </div>
+                <div class="graficas-container">
+                    <div class="imagen-grafica">
+                        <h3>No Admisiones</h3>
+                        <img src="img/zonaD/admis_subD.png" alt="Mediana de No Admisiones"
+                             onerror="this.src='img/placeholder.png'">
+                    </div>
+                    <div class="imagen-grafica">
+                        <h3>Sobreseimientos</h3>
+                        <img src="img/zonaD/sobre_subD.png" alt="Mediana de Sobreseimientos"
+                             onerror="this.src='img/placeholder.png'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>Made by Taquito</footer>
+    <script src="app.js"></script>
+</body>
+</html>
