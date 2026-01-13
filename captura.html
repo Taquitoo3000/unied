@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODHEG | Captura de Expediente</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/captura.css">
+    <link rel="stylesheet" href="styles/menu.css">
+</head>
+<body>
+    <header>
+        <section class="linea">
+            <a href="#" class="logo-link" onclick="scrollToTop()">
+                <img src="img/logo_horizontal.png" alt="PRODHEG" width="200px">
+            </a>
+            <h1 class="titulo">
+                Unidad de Información Estadística y Documental
+            </h1>
+        </section>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <nav class="menu" id="menu">
+            <a href="index.html" class="boton_menu">Inicio</a>
+            <div class="submenu-container" id="estadisticasContainer">
+                <a href="estadisticas.html" class="boton_menu has-submenu" id="estadisticasBtn">Estadísticas</a>
+                <div class="submenu" id="estadisticasSubmenu">
+                    <a href="https://taquitoo3000.pythonanywhere.com/">General</a>
+                    <a href="subs.html">Subprocuradurías</a>
+                    <a href="censo_trabajo.html">Desglose</a>
+                </div>
+            </div>
+            <a href="reporte.html" class="boton_menu">Reporte</a>
+            <a href="miembros.html" class="boton_menu">Miembros</a>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <!-- Encabezado del formulario -->
+        <div class="form-header">
+            <h2 class="titulo">Captura de Expediente</h2>
+            <p class="form-subtitle">Sistema de registro de quejas y denuncias - PRODHEG</p>
+        </div>
+
+        <!-- Mensajes de alerta -->
+        <div id="alertSuccess" class="alert alert-success" style="display: none;">
+            ✓ Expediente guardado exitosamente
+        </div>
+        <div id="alertError" class="alert alert-error" style="display: none;">
+            ✗ Error al procesar el formulario. Verifica los datos.
+        </div>
+
+        <!-- Tarjeta del formulario -->
+        <div class="form-card">
+            <form id="capturaForm" action="#" method="post">
+                <!-- Campos básicos en grid responsivo -->
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="expediente">Número de Expediente <span class="required">*</span></label>
+                        <input type="text" id="expediente" name="expediente" class="form-control" 
+                               placeholder="Ej: 1234/2025-A" required
+                               pattern="^\d{4}/\d{4}-[A-Z]$"
+                               title="Formato: ####/AAAA-Letra (Ej: 1234/2025-A)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha_inicio">Fecha de Inicio <span class="required">*</span></label>
+                        <input type="date" id="fecha_inicio" name="fecha_inicio" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha_conclusion">Fecha de Conclusión</label>
+                        <input type="date" id="fecha_conclusion" name="fecha_conclusion" class="form-control">
+                    </div>
+                </div>
+
+                <!-- Hechos Violatorios -->
+                <div class="form-group">
+                    <label>
+                        Hecho(s) Violatorio(s) 
+                        <span class="counter-badge" id="hechosCounter">1</span>
+                        <span class="required">*</span>
+                    </label>
+                    <p class="select-instruction">Mantén presionada la tecla Ctrl (Cmd en Mac) para seleccionar múltiples opciones</p>
+                    
+                    <div class="multi-select-container" id="contenedor_hechos">
+                        <select name="hechos[]" class="form-control" multiple required size="4">
+                            <option value="Trato_Indigno">Trato Indigno</option>
+                            <option value="Tortura">Tortura</option>
+                            <option value="Detencion_Arbitraria">Detención Arbitraria</option>
+                            <option value="Ejecucion_Extrajudicial">Ejecución Extrajudicial</option>
+                            <option value="Desaparicion_Forzada">Desaparición Forzada</option>
+                            <option value="Violencia_Sexual">Violencia Sexual</option>
+                            <!-- Agrega más opciones aquí -->
+                        </select>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="button" class="btn btn-secondary" onclick="agregarCampo('contenedor_hechos')">
+                            <span class="btn-icon">+</span> Agregar Otro Hecho
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="quitarCampo('contenedor_hechos')">
+                            <span class="btn-icon">-</span> Quitar Último Hecho
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Autoridad Señalada -->
+                <div class="form-group">
+                    <label>
+                        Autoridad(es) Señalada(s)
+                        <span class="counter-badge" id="autoridadCounter">1</span>
+                        <span class="required">*</span>
+                    </label>
+                    
+                    <div class="multi-select-container" id="contenedor_autoridad">
+                        <select name="autoridad[]" class="form-control" multiple required size="4">
+                            <option value="Dependencia_Municipal_Seguridad">Dependencia Municipal de Seguridad Pública</option>
+                            <option value="SEG">Secretaría de Educación de Guanajuato (SEG)</option>
+                            <option value="Fiscalia_General">Fiscalía General del Estado</option>
+                            <option value="Secretaria_Salud">Secretaría de Salud</option>
+                            <option value="IMSS">Instituto Mexicano del Seguro Social (IMSS)</option>
+                            <option value="ISSSTE">Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado (ISSSTE)</option>
+                            <!-- Agrega más opciones aquí -->
+                        </select>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="button" class="btn btn-secondary" onclick="agregarCampo('contenedor_autoridad')">
+                            <span class="btn-icon">+</span> Agregar Otra Autoridad
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="quitarCampo('contenedor_autoridad')">
+                            <span class="btn-icon">-</span> Quitar Última Autoridad
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Botón de envío -->
+                <button type="submit" class="btn btn-success">
+                    <span class="btn-icon">✓</span> Guardar Expediente
+                </button>
+
+                <!-- Sección de resumen (opcional) -->
+                <div class="summary-section" id="summarySection" style="display: none;">
+                    <h3>Resumen del Expediente</h3>
+                    <div id="summaryContent"></div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>Made by Taquito</footer>
+
+    <script src="app.js"></script>
+    <script src="captura.js"></script>
+</body>
+</html>
