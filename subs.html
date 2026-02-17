@@ -9,31 +9,16 @@
     <link rel="stylesheet" href="styles/menu.css">
 </head>
 <body>
-    <header>
-        <section class="linea">
-            <a href="index.html" class="logo-link" onclick="scrollToTop()">
-                <img src="img/logo_horizontal.png" alt="PRODHEG" width="200px">
-            </a>
-            <h1 class="titulo">
-                Unidad de Información Estadística y Documental
-            </h1>
-        </section>
-        <button class="menu-toggle" id="menu-toggle">☰</button>
-        <nav class="menu" id="menu">
-            <a href="index.html" class="boton_menu">Inicio</a>
-            <div class="submenu-container" id="estadisticasContainer">
-                <a href="estadisticas.html" class="boton_menu has-submenu" id="estadisticasBtn">Estadísticas</a>
-                <div class="submenu" id="estadisticasSubmenu">
-                    <a href="https://taquitoo3000.pythonanywhere.com/">General</a>
-                    <a href="subs.html">Subprocuradurías</a>
-                    <a href="censo_trabajo.html">Desglose</a>
-                    <a href="http://172.17.3.34:8501">SUNIED</a>
-                </div>
-            </div>
-            <a href="reporte.html" class="boton_menu">Reporte</a>
-            <a href="miembros.html" class="boton_menu">Miembros</a>
-        </nav>
-    </header>
+    <section class="linea">
+        <a href="index.html" class="logo-link" onclick="scrollToTop()">
+            <img src="img/logo_horizontal.png" alt="PRODHEG" width="200px">
+        </a>
+        <h1 class="titulo">
+            Unidad de Información Estadística y Documental
+        </h1>
+    </section>
+    <!-- Contenedor para el header -->
+    <div id="header-container"></div>
     <main>
         <h1 class="titulo">Subsprocuradurías</h1>
         <div class="division"></div>
@@ -237,8 +222,11 @@
             </div>
         </div>
     </main>
-    <footer>Made by Taquito</footer>
+    <div id="footer-container"></div>
+
     <script src="app.js"></script>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
 </body>
 </html>
 
