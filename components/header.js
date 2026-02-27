@@ -21,6 +21,7 @@ function loadHeader() {
     
     document.getElementById('header-container').innerHTML = headerHTML;
     initMenuFunctionality();
+    highlightCurrentPage();
 }
 
 // Ejecutar cuando cargue el DOM

@@ -12,7 +12,7 @@ function loadplot() {
                 document.body.appendChild(script);
             });
 
-            initMenuFunctionality();
+            //initMenuFunctionality();
         })
 }
 

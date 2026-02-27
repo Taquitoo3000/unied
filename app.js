@@ -115,4 +115,4 @@ function highlightCurrentPage() {
 }
 
 // Ejecutar después de cargar los componentes
-setTimeout(highlightCurrentPage, 150);
+//setTimeout(highlightCurrentPage, 150);
