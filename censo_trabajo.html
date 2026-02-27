@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/subs.css">
     <link rel="stylesheet" href="styles/menu.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
     <section class="linea">
@@ -23,6 +24,33 @@
     <main>
         <h1 class="titulo">Desglose</h1>
         <div class="division"></div>
+
+        <!-- Recepciones -->
+        <div class="zona-container">
+            <div class="zona-header" onclick="toggleZona('Recepciones')">
+                <h2>Recepciones</h2>
+                <span class="flecha">▼</span>
+            </div>
+            <div class="zona-content" id="Recepciones">
+                <div class="graficas-container">
+                    <div class="imagen-grafica" style="display: flex; justify-content: center; align-items: center;">
+                        <div id="plot-municipios"></div>
+                    </div>
+                    <div class="imagen-grafica">
+                        <h3>Top Municipios con Señalamientos</h3>
+                        <ul>
+                            <li>León:   115.85</li>
+                            <li>Irapuato:   64.81</li>
+                            <li>Celaya:	47.85</li>                            
+                            <li>San Miguel de Allende:	25.92</li>
+                            <li>Salamanca:	17.88</li>
+                            <li>Guanajuato:	15.37</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Tiempos de Respuesta -->
         <div class="zona-container">
             <div class="zona-header" onclick="toggleZona('zonaA')">
@@ -216,6 +244,7 @@
     <script src="app.js"></script>
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
+    <script src="components/plots.js"></script>
 </body>
 </html>
 
