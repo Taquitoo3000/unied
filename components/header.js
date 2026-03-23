@@ -13,6 +13,7 @@ function loadHeader() {
                         <a href="http://172.17.3.34:8051/">Conexiones</a>
                     </div>
                 </div>
+                <a href="predicciones.html" class="boton_menu">Predicciones</a>
                 <a href="http://172.17.3.34:8501" class="boton_menu">SUNIED</a>
                 <a href="miembros.html" class="boton_menu">Miembros</a>
             </nav>

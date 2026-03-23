@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte</title>
+    <title>Predicciones</title>
     <link rel="icon" href="img/loguito.png" type="image/png">
+    <link rel="stylesheet" href="styles/subs.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/menu.css">
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
 </head>
 <body>
     <section class="linea">
@@ -20,22 +22,15 @@
     <!-- Contenedor para el header -->
     <div id="header-container"></div>
     <main>
-        <h1 class="titulo">Reporte Semanal</h1>
-        <div class="division"></div>
-        <section class="presentacion">
-            <p style="text-align: center;">
-                El Reporte semanal cuenta con las estadísticas actualizadas semanalmente.
-                Este incluye las autoridades más señaladas desde distintos ámbitos,
-                así como las violaciones a los derechos humanos más señaladas,
-                información de las resoluciones, etc.
-            </p>
-            <a href="files/SEMANAL.docx" class="boton_cv">Descargar Reporte</a>
-        </section>
+        <div class="zona-container">
+            <div id="plot-prediccion"></div>
+        </div>
     </main>
     <div id="footer-container"></div>
 
     <script src="app.js"></script>
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
+    <script src="components/plots.js"></script>
 </body>
 </html>
