@@ -10,7 +10,7 @@ function loadHeader() {
                         <a href="https://taquitoo3000.pythonanywhere.com/">General</a>
                         <a href="subs.html">Subprocuradurías</a>
                         <a href="censo_trabajo.html">Desglose</a>
-                        <a href="http://172.17.3.34:8051/">Conexiones</a>
+                        <a href="http://172.17.2.25:8051/">Conexiones</a>
                     </div>
                 </div>
                 <a href="predicciones.html" class="boton_menu">Predicciones</a>
